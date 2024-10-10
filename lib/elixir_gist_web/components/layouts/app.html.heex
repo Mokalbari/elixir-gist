@@ -35,6 +35,7 @@
       id="dropdown_menu"
       class="dropdown-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border-white/50 border hover:"
       hidden="true"
+      phx-click-away={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}
     >
       <%= if @current_user do %>
         <.link
@@ -106,3 +107,17 @@
   <.flash_group flash={@flash} />
   <%= @inner_content %>
 </main>
+<footer class="h-[120px] flex justify-center text-white px-16 py-20">
+  <div class="w-full px-10">
+    <div class="border-t-[1px] border-white w-full" />
+    <div class="flex item-center gap-2 py-6">
+      <img src="/images/em-logo.svg" alt="Elixir mentor logo" class="w-8" />
+      <p>Made with ❤️ Romain Hoarau Alastor</p>
+      <div class="text-emLavender-dark ml-4 flex gap-4">
+        <a class="hover:underline" href={~p"/"}>Terms</a>
+        <a class="hover:underline" href={~p"/"}>Privacy</a>
+        <a class="hover:underline" href={~p"/"}>About</a>
+      </div>
+    </div>
+  </div>
+</footer>
